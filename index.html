@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Love Story ❤️</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+  color: white;
+  text-align: center;
+  overflow-x: hidden;
+}
+
+.container {
+  padding: 40px 20px;
+}
+
+h1 {
+  font-size: 3rem;
+
+  animation: fadeIn 3s ease-in-out;
+}
+
+p {
+  animation: fadeIn 5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* 💖 Floating Hearts */
+.heart {
+  position: fixed;
+  bottom: -10px;
+  font-size: 20px;
+  animation: floatUp 5s linear infinite;
+}
+
+@keyframes floatUp {
+  0% { transform: translateY(0); opacity: 1; }
+  100% { transform: translateY(-100vh); opacity: 0; }
+}
+
+/* 📸 Single front image */
+.gallery {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.gallery img {
+  width: min(90%, 400px);
+  border-radius: 20px;
+  height: auto;
+  object-fit: cover;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+/* ⏳ Timer */
+.timer {
+  font-size: 1.5rem;
+  margin-top: 20px;
+}
+
+/* 💖 Button */
+#loveBtn {
+  margin-top: 25px;
+  padding: 12px 25px;
+  font-size: 18px;
+  background-color: #ff4d6d;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#loveBtn:hover {
+  transform: scale(1.1);
+  background-color: #e60039;
+}
+
+/* 💌 Hidden Message */
+#loveMessage {
+  margin-top: 20px;
+  font-size: 22px;
+  display: none;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+#loveMessage.show {
+  display: block;
+  opacity: 1;
+}
+
+/* 🌙 Love page section */
+#lovePage {
+  display: none;
+  padding: 40px 20px;
+}
+
+#lovePage .message {
+  font-size: 32px;
+  line-height: 1.5;
+  animation: fadeIn 2s ease-in-out;
+}
+
+#lovePage .love-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+</style>
+</head>
+
+<body>
+
+<!-- 🎵 MUSIC -->
+<audio id="music" loop>
+  <source src="Perfect.mp3" type="audio/mp3">
+</audio>
+
+<div class="container">
+  <h1>Happy 1 Month ❤️</h1>
+  <h2>My Love My Wifee My Kuki ❤️ ❤️ ❤️ ❤️</h2>
+
+  <!-- 💌 Start Message -->
+  <h3 id="startMsg">Tap anywhere to start our love story 🎵❤️</h3>
+
+  <p>
+    From 10 March till forever… every moment with you will be special  and beautiful  💖
+  </p>
+
+  <!-- 💖 Button -->
+  <button onclick="goToLovePage()" id="loveBtn">
+    Click hear my Cutie  💕
+  </button>
+
+  <!-- 💌 Hidden Love Message -->
+  <div id="loveMessage">
+   ❤️ You are my everything ❤️ <br>
+    I feel lucky to have you in my life 💕 <br>
+    Forever yours 💞
+  </div>
+
+  <!-- ⏳ Love Timer -->
+  <div class="timer" id="timer"></div>
+
+  <!-- 📸 Photo Gallery -->
+  <div class="gallery">
+    <img src="myphoto.jpg" alt="Love photo">
+  </div>
+</div>
+
+<div id="lovePage">
+  <div class="love-container">
+    <div class="message">
+      ❤️ My Love My wife ❤️ <br><br>
+      You are the most special person in my life my wife  ❤️ <br>
+      aap sirf ek person nhi meri puri life ho mera sab kuch aap se 
+    start or aap se end hota he aap mera pura world pura universe ho thank you so much 
+    aap meri life me aayi meri life ko beautiful banaya 
+    I promise me aapka always khiyal rakhunga always aapke sath rahung kesi bhi situation ho 
+    me aapki life ke har moment me aapke sath rahung aapko always support karung har moment ko special banaung 
+    aapki puri life aapko hamesha khush rakhung aapki har cheej har khubaish ko pura karung  always aap ko me sabse uper khud se pehele rakhung 
+    aapki always respect karung aapke parents mere parents he unki always repspect karung aap ko always meri bacchi ki trh 
+    treat karung har barish me aapka umbrella banung har jgh aapke peeche khada rahung meri puri life bass aapki he uss pr aapka hak he meri har cheeej aapki he uss pr aapka hak he or bhi bahut kuch likhna chahta hu aapke liye ab or ab aapke sath puri life likhane he mujhe har page pr jgh jgh par aapke sath aapka hona he or ha bo cutie bo aapko Rajasthan dress me aapke sath jana he . I love you my kuchu puchu my wife Kuki   💕 <br>
+      I love you forever till the end of my life  💞
+    </div>
+  </div>
+</div>
+
+<script>
+// 🎵 PLAY MUSIC ON FIRST CLICK
+document.addEventListener("click", function () {
+  const music = document.getElementById("music");
+  music.play();
+  document.getElementById("startMsg").style.display = "none";
+}, { once: true });
+
+// 💌 GO TO LOVE PAGE
+function goToLovePage() {
+  const frontPage = document.querySelector('.container');
+  const lovePage = document.getElementById('lovePage');
+  frontPage.style.display = 'none';
+  lovePage.style.display = 'block';
+  document.title = 'For You ❤️';
+  history.pushState({}, '', 'love.html');
+}
+
+window.addEventListener('popstate', function () {
+  const frontPage = document.querySelector('.container');
+  const lovePage = document.getElementById('lovePage');
+  if (location.pathname.endsWith('love.html')) {
+    frontPage.style.display = 'none';
+    lovePage.style.display = 'block';
+    document.title = 'For You ❤️';
+  } else {
+    frontPage.style.display = 'block';
+    lovePage.style.display = 'none';
+    document.title = 'Our Love Story ❤️';
+  }
+});
+
+// ⏳ TIMER FROM 10 MARCH
+const startDate = new Date("2026-03-10");
+
+function updateTimer() {
+  const now = new Date();
+  const diff = now - startDate;
+
+  const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+  const minutes = Math.floor((diff / (1000 * 60)) % 60);
+  const seconds = Math.floor((diff / 1000) % 60);
+
+  document.getElementById("timer").innerHTML =
+    `❤️ Together for ${days} days ${hours} hrs ${minutes} mins ${seconds} secs`;
+}
+
+setInterval(updateTimer, 1000);
+updateTimer();
+
+// 💖 FLOATING HEARTS
+function createHeart() {
+  const heart = document.createElement("div");
+  heart.classList.add("heart");
+  heart.innerHTML = "❤️";
+  heart.style.left = Math.random() * 100 + "vw";
+  heart.style.animationDuration = (Math.random() * 3 + 2) + "s";
+  document.body.appendChild(heart);
+
+  setTimeout(() => {
+    heart.remove();
+  }, 5000);
+}
+
+setInterval(createHeart, 300);
+</script>
+
+</body>
+</html>
